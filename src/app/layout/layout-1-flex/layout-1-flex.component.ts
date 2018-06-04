@@ -2,35 +2,35 @@ import { Component } from '@angular/core';
 import { LayoutService } from '../layout.service';
 
 @Component({
-  selector: 'app-layout-1-flex',
-  templateUrl: './layout-1-flex.component.html',
-  styles: [':host { display: block; }', ':host /deep/ .layout-loading .sidenav-link { transition: none !important; }']
+    selector: 'app-layout-1-flex',
+    templateUrl: './layout-1-flex.component.html',
+    styles: [':host { display: block; }', ':host /deep/ .layout-loading .sidenav-link { transition: none !important; }']
 })
 export class Layout1FlexComponent {
-  // Prevent "blink" effect
-  public initialized = false;
+    // Prevent "blink" effect
+    public initialized = false;
 
-  constructor(private layoutService: LayoutService) {}
+    constructor(private layoutService: LayoutService) {}
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.initialized = true;
+    ngAfterViewInit() {
+        setTimeout(() => {
+            this.initialized = true;
 
-      this.layoutService.init();
-      this.layoutService.update();
-      this.layoutService.setAutoUpdate(true);
-    });
-  }
+            this.layoutService.init();
+            this.layoutService.update();
+            this.layoutService.setAutoUpdate(true);
+        });
+    }
 
-  ngOnDestroy() {
-    setTimeout(() => {
-      this.layoutService.destroy();
-    });
-  }
+    ngOnDestroy() {
+        setTimeout(() => {
+            this.layoutService.destroy();
+        });
+    }
 
-  closeSidenav() {
-    setTimeout(() => {
-      this.layoutService.setCollapsed(true);
-    });
-  }
+    closeSidenav() {
+        setTimeout(() => {
+            this.layoutService.setCollapsed(true);
+        });
+    }
 }

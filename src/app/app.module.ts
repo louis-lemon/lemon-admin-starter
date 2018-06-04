@@ -30,30 +30,30 @@ import { Page2Component } from './page-2/page-2.component';
 //
 
 @NgModule({
-  declarations: [
-    AppComponent,
+    declarations: [
+        AppComponent,
 
-    // Pages
-    HomeComponent,
-    Page2Component
-  ],
+        // Pages
+        HomeComponent,
+        Page2Component
+    ],
 
-  imports: [
-    BrowserModule,
-    NgbModule.forRoot(),
+    imports: [
+        BrowserModule,
+        NgbModule.forRoot(),
 
-    // App
-    AppRoutingModule,
-    LayoutModule
-  ],
+        // App
+        AppRoutingModule,
+        LayoutModule
+    ],
 
-  providers: [
-    Title,
-    AppService
-  ],
+    providers: [
+        Title,
+        AppService
+    ],
 
-  bootstrap: [
-    AppComponent
-  ]
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule {}

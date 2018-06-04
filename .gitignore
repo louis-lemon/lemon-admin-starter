@@ -252,6 +252,13 @@ xcuserdata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
 package-lock.json
 
 # End of https://www.gitignore.io/api/node,xcode,linux,macos,angular,windows,intellij

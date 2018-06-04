@@ -42,29 +42,29 @@ import { LayoutService } from './layout.service';
 //
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    NgbModule,
-    SidenavModule
-  ],
-  declarations: [
-    Layout1Component,
-    Layout1FlexComponent,
-    Layout2Component,
-    Layout2FlexComponent,
-    LayoutWithoutNavbarComponent,
-    LayoutWithoutNavbarFlexComponent,
-    LayoutWithoutSidenavComponent,
-    LayoutHorizontalSidenavComponent,
-    LayoutBlankComponent,
+    imports: [
+        CommonModule,
+        RouterModule,
+        NgbModule,
+        SidenavModule
+    ],
+    declarations: [
+        Layout1Component,
+        Layout1FlexComponent,
+        Layout2Component,
+        Layout2FlexComponent,
+        LayoutWithoutNavbarComponent,
+        LayoutWithoutNavbarFlexComponent,
+        LayoutWithoutSidenavComponent,
+        LayoutHorizontalSidenavComponent,
+        LayoutBlankComponent,
 
-    LayoutNavbarComponent,
-    LayoutSidenavComponent,
-    LayoutFooterComponent
-  ],
-  providers: [
-    LayoutService
-  ]
+        LayoutNavbarComponent,
+        LayoutSidenavComponent,
+        LayoutFooterComponent
+    ],
+    providers: [
+        LayoutService
+    ]
 })
 export class LayoutModule { }

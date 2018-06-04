@@ -65,7 +65,7 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  * IE 11 fix
  */
 if (typeof window !== 'undefined' && typeof SVGElement !== 'undefined' && typeof SVGElement.prototype.contains === 'undefined') {
-  SVGElement.prototype.contains = HTMLDivElement.prototype.contains;
+    SVGElement.prototype.contains = HTMLDivElement.prototype.contains;
 }
 
 /***************************************************************************************************

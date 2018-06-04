@@ -2,35 +2,35 @@ import { Component } from '@angular/core';
 import { LayoutService } from '../layout.service';
 
 @Component({
-  selector: 'app-layout-2',
-  templateUrl: './layout-2.component.html',
-  styles: [':host { display: block; }', ':host /deep/ .layout-loading .sidenav-link { transition: none !important; }']
+    selector: 'app-layout-2',
+    templateUrl: './layout-2.component.html',
+    styles: [':host { display: block; }', ':host /deep/ .layout-loading .sidenav-link { transition: none !important; }']
 })
 export class Layout2Component {
-  // Prevent "blink" effect
-  public initialized = false;
+    // Prevent "blink" effect
+    public initialized = false;
 
-  constructor(private layoutService: LayoutService) {}
+    constructor(private layoutService: LayoutService) {}
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.initialized = true;
+    ngAfterViewInit() {
+        setTimeout(() => {
+            this.initialized = true;
 
-      this.layoutService.init();
-      this.layoutService.update();
-      this.layoutService.setAutoUpdate(true);
-    });
-  }
+            this.layoutService.init();
+            this.layoutService.update();
+            this.layoutService.setAutoUpdate(true);
+        });
+    }
 
-  ngOnDestroy() {
-    setTimeout(() => {
-      this.layoutService.destroy();
-    });
-  }
+    ngOnDestroy() {
+        setTimeout(() => {
+            this.layoutService.destroy();
+        });
+    }
 
-  closeSidenav() {
-    setTimeout(() => {
-      this.layoutService.setCollapsed(true);
-    });
-  }
+    closeSidenav() {
+        setTimeout(() => {
+            this.layoutService.setCollapsed(true);
+        });
+    }
 }

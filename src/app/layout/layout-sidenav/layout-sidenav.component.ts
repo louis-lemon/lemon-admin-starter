@@ -4,53 +4,53 @@ import { AppService } from '../../app.service';
 import { LayoutService } from '../layout.service';
 
 @Component({
-  selector: 'app-layout-sidenav',
-  templateUrl: './layout-sidenav.component.html',
-  styles: [':host { display: block; }'],
-  host: {
-    '[class.layout-sidenav]': 'orientation !== "horizontal"',
-    '[class.layout-sidenav-horizontal]': 'orientation === "horizontal"',
-    '[class.flex-grow-0]': 'orientation === "horizontal"'
-  },
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-layout-sidenav',
+    templateUrl: './layout-sidenav.component.html',
+    styles: [':host { display: block; }'],
+    host: {
+        '[class.layout-sidenav]': 'orientation !== "horizontal"',
+        '[class.layout-sidenav-horizontal]': 'orientation === "horizontal"',
+        '[class.flex-grow-0]': 'orientation === "horizontal"'
+    },
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LayoutSidenavComponent {
-  @Input() orientation = 'vertical';
+    @Input() orientation = 'vertical';
 
-  constructor(private router: Router, private appService: AppService, private layoutService: LayoutService) {}
+    constructor(private router: Router, private appService: AppService, private layoutService: LayoutService) {}
 
-  ngAfterViewInit() {
-    // Safari bugfix
-    this.layoutService._redrawLayoutSidenav();
-  }
-
-  getClasses() {
-    let bg = this.appService.layoutSidenavBg;
-
-    if (this.orientation === 'horizontal' && (bg.indexOf(' sidenav-dark') !== -1 || bg.indexOf(' sidenav-light') !== -1)) {
-      bg = bg
-        .replace(' sidenav-dark', '')
-        .replace(' sidenav-light', '')
-        .replace('-darker', '')
-        .replace('-dark', '');
+    ngAfterViewInit() {
+        // Safari bugfix
+        this.layoutService._redrawLayoutSidenav();
     }
 
-    return `${this.orientation === 'horizontal' ? 'container-p-x ' : ''} bg-${bg}`;
-  }
+    getClasses() {
+        let bg = this.appService.layoutSidenavBg;
 
-  isActive(url) {
-    return this.router.isActive(url, true);
-  }
+        if (this.orientation === 'horizontal' && (bg.indexOf(' sidenav-dark') !== -1 || bg.indexOf(' sidenav-light') !== -1)) {
+            bg = bg
+                .replace(' sidenav-dark', '')
+                .replace(' sidenav-light', '')
+                .replace('-darker', '')
+                .replace('-dark', '');
+        }
 
-  isMenuActive(url) {
-    return this.router.isActive(url, false);
-  }
+        return `${this.orientation === 'horizontal' ? 'container-p-x ' : ''} bg-${bg}`;
+    }
 
-  isMenuOpen(url) {
-    return this.router.isActive(url, false) && this.orientation !== 'horizontal';
-  }
+    isActive(url) {
+        return this.router.isActive(url, true);
+    }
 
-  toggleSidenav() {
-    this.layoutService.toggleCollapsed();
-  }
+    isMenuActive(url) {
+        return this.router.isActive(url, false);
+    }
+
+    isMenuOpen(url) {
+        return this.router.isActive(url, false) && this.orientation !== 'horizontal';
+    }
+
+    toggleSidenav() {
+        this.layoutService.toggleCollapsed();
+    }
 }

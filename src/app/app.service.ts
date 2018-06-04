@@ -3,36 +3,36 @@ import { Title } from '@angular/platform-browser';
 
 @Injectable()
 export class AppService {
-  constructor(private titleService: Title) {}
+    constructor(private titleService: Title) {}
 
-  // Set page title
-  set pageTitle(value) {
-    this.titleService.setTitle(`${value} - Angular Starter`);
-  }
+    // Set page title
+    set pageTitle(value) {
+        this.titleService.setTitle(`${value} - Angular Starter`);
+    }
 
-  // Check for RTL layout
-  get isRTL() {
-    return document.documentElement.getAttribute('dir') === 'rtl' ||
-           document.body.getAttribute('dir') === 'rtl';
-  }
+    // Check for RTL layout
+    get isRTL() {
+        return document.documentElement.getAttribute('dir') === 'rtl' ||
+            document.body.getAttribute('dir') === 'rtl';
+    }
 
-  // Check if IE10
-  get isIE10() {
-    return typeof document['documentMode'] === 'number' && document['documentMode'] === 10;
-  }
+    // Check if IE10
+    get isIE10() {
+        return typeof document['documentMode'] === 'number' && document['documentMode'] === 10;
+    }
 
-  // Layout navbar color
-  get layoutNavbarBg() {
-    return 'navbar-theme';
-  }
+    // Layout navbar color
+    get layoutNavbarBg() {
+        return 'navbar-theme';
+    }
 
-  // Layout sidenav color
-  get layoutSidenavBg() {
-    return 'dark';
-  }
+    // Layout sidenav color
+    get layoutSidenavBg() {
+        return 'dark';
+    }
 
-  // Layout footer color
-  get layoutFooterBg() {
-    return 'footer-theme';
-  }
+    // Layout footer color
+    get layoutFooterBg() {
+        return 'footer-theme';
+    }
 }

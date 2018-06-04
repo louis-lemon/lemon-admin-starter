@@ -2,32 +2,32 @@ import { Component } from '@angular/core';
 import { LayoutService } from '../layout.service';
 
 @Component({
-  selector: 'app-layout-horizontal-sidenav',
-  templateUrl: './layout-horizontal-sidenav.component.html',
-  styles: [':host { display: block; }', ':host /deep/ .layout-loading .sidenav-link { transition: none !important; }']
+    selector: 'app-layout-horizontal-sidenav',
+    templateUrl: './layout-horizontal-sidenav.component.html',
+    styles: [':host { display: block; }', ':host /deep/ .layout-loading .sidenav-link { transition: none !important; }']
 })
 export class LayoutHorizontalSidenavComponent {
-  // Prevent "blink" effect
-  public initialized = false;
+    // Prevent "blink" effect
+    public initialized = false;
 
-  constructor(private layoutService: LayoutService) {}
+    constructor(private layoutService: LayoutService) {}
 
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.initialized = true;
+    ngAfterViewInit() {
+        setTimeout(() => {
+            this.initialized = true;
 
-      // Enshure that we have not '.layout-expanded' class on the html element
-      this.layoutService._removeClass('layout-expanded');
+            // Enshure that we have not '.layout-expanded' class on the html element
+            this.layoutService._removeClass('layout-expanded');
 
-      this.layoutService.init();
-      this.layoutService.update();
-      this.layoutService.setAutoUpdate(true);
-    });
-  }
+            this.layoutService.init();
+            this.layoutService.update();
+            this.layoutService.setAutoUpdate(true);
+        });
+    }
 
-  ngOnDestroy() {
-    setTimeout(() => {
-      this.layoutService.destroy();
-    });
-  }
+    ngOnDestroy() {
+        setTimeout(() => {
+            this.layoutService.destroy();
+        });
+    }
 }

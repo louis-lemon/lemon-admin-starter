@@ -17,13 +17,13 @@ import { Page2Component } from './page-2/page-2.component';
 
 const routes: Routes = [
 
-  { path: '', component: Layout1Component, pathMatch: 'full', children: [
-    { path: '', component: HomeComponent },
-  ]},
+    { path: '', component: Layout1Component, pathMatch: 'full', children: [
+            { path: '', component: HomeComponent },
+        ]},
 
-  { path: 'page-2', component: Layout1Component, children: [
-    { path: '', component: Page2Component },
-  ]}
+    { path: 'page-2', component: Layout1Component, children: [
+            { path: '', component: Page2Component },
+        ]}
 
 ];
 
@@ -31,7 +31,7 @@ const routes: Routes = [
 //
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule {}
