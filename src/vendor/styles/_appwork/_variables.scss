@@ -33,6 +33,7 @@ $yellow:       #FFD950 !default;
 $green:        #02BC77 !default;
 $teal:         #20c997 !default;
 $cyan:         #28c3d7 !default;
+$lemon-main-color: #d76d4d !default;
 
 $theme-colors: (
   "primary":   $indigo,
@@ -41,7 +42,8 @@ $theme-colors: (
   "info":      $cyan,
   "warning":   $yellow,
   "danger":    $red,
-  "dark":      $gray-900
+  "dark":      $gray-900,
+  "lemon-theme": $lemon-main-color,
 ) !default;
 
 $body-color:       #4E5155 !default; //#4a4a4a

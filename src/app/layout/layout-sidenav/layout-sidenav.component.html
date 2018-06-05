@@ -3,8 +3,23 @@
     <!-- Inner -->
     <div class="sidenav-inner" [ngClass]="{ 'py-1': orientation !== 'horizontal' }">
 
+
+
         <sidenav-router-link icon="ion ion-ios-contact" route="/" [active]="isActive('/')">Home</sidenav-router-link>
         <sidenav-router-link icon="ion ion-md-desktop" route="/page-2" [active]="isActive('/page-2')">Page 2</sidenav-router-link>
 
+        <!-- Permissions -->
+        <sidenav-menu icon="ion ion-md-people" text="사용자 관리" [active]="isMenuActive('/permissions')" [open]="isMenuOpen('/permissions')">
+            <sidenav-router-link route="/permissions/users" [active]="isActive('/permissions/users')">유저 관리</sidenav-router-link>
+            <sidenav-router-link route="/permissions/groups" [active]="isActive('/permissions/groups')">그룹 관리</sidenav-router-link>
+            <sidenav-router-link route="/permissions/roles" [active]="isActive('/permissions/roles')">권한 관리</sidenav-router-link>
+        </sidenav-menu>
+
+        <!-- Shoppings -->
+        <sidenav-menu icon="ion ion-md-cart" text="쇼핑" [active]="isMenuActive('/shoppings')" [open]="isMenuOpen('/shoppings')">
+            <sidenav-router-link route="/shoppings/goods" [active]="isActive('/shoppings/goods')">상품 관리</sidenav-router-link>
+            <sidenav-router-link route="/shoppings/orders" [active]="isActive('/shoppings/orders')">주문 관리</sidenav-router-link>
+            <sidenav-router-link route="shoppings/answers" [active]="isActive('/shoppings/answers')">문의 관리</sidenav-router-link>
+        </sidenav-menu>
     </div>
 </sidenav>
