@@ -1,17 +1,32 @@
 {
-    "name": "appwork-angular-starter",
-    "version": "1.0.0",
+    "name": "lemon-admin",
+    "version": "1.0.0a",
+    "description": "Lemon Admin Web-Application Based on Angular5 + Bootstrap 4",
     "private": true,
     "scripts": {
         "ng": "ng",
         "start": "ng serve --host 0.0.0.0 --disable-host-check --extract-css",
         "build": "ng build --extract-css",
+        "build-prod": "ng build --prod",
         "prod": "ng build --prod --output-hashing=media",
         "prod:hashed": "ng build --prod",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e",
-        "postinstall": "npm rebuild node-sass"
+        "e2e": "ng e2e"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lemoncloud-io/lemon-admin-starter.git"
+    },
+    "keywords": [
+        "LemonCloud",
+        "Angular5",
+        "Bootstrap4"
+    ],
+    "author": "Louis <louis@lemoncloud.io>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/lemoncloud-io/lemon-admin-starter/issues"
     },
     "dependencies": {
         "@agm/core": "1.0.0-beta.2",

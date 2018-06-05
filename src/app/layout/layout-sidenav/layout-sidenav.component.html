@@ -2,11 +2,12 @@
 
     <!-- Inner -->
     <div class="sidenav-inner" [ngClass]="{ 'py-1': orientation !== 'horizontal' }">
+        <sidenav-router-link icon="ion ion-ios-contact" route="/" [active]="isActive('/')">Dashboard</sidenav-router-link>
+        <sidenav-divider class="mb-1"></sidenav-divider>
 
-
-
-        <sidenav-router-link icon="ion ion-ios-contact" route="/" [active]="isActive('/')">Home</sidenav-router-link>
-        <sidenav-router-link icon="ion ion-md-desktop" route="/page-2" [active]="isActive('/page-2')">Page 2</sidenav-router-link>
+        <sidenav-header class="small font-weight-semibold">SERVICE</sidenav-header>
+        <sidenav-router-link icon="ion ion-md-desktop" route="/item-pools" [active]="isActive('/item-pools')">자동 가격</sidenav-router-link>
+        <sidenav-router-link icon="ion ion-md-desktop" route="/loopers" [active]="isActive('/loopers')">레몬 루퍼</sidenav-router-link>
 
         <!-- Permissions -->
         <sidenav-menu icon="ion ion-md-people" text="사용자 관리" [active]="isMenuActive('/permissions')" [open]="isMenuOpen('/permissions')">
@@ -21,5 +22,14 @@
             <sidenav-router-link route="/shoppings/orders" [active]="isActive('/shoppings/orders')">주문 관리</sidenav-router-link>
             <sidenav-router-link route="shoppings/answers" [active]="isActive('/shoppings/answers')">문의 관리</sidenav-router-link>
         </sidenav-menu>
+
+        <sidenav-divider class="mb-1"></sidenav-divider>
+        <sidenav-header class="small font-weight-semibold">FAMILY</sidenav-header>
+        <!-- Family Site -->
+        <sidenav-menu icon="ion ion-md-cart" text="패밀리사이트" [active]="isMenuActive('/family-site')" [open]="isMenuOpen('/family-site')">
+            <sidenav-router-link>LemonCloud</sidenav-router-link>
+            <sidenav-router-link>LemonShop</sidenav-router-link>
+        </sidenav-menu>
+
     </div>
 </sidenav>
